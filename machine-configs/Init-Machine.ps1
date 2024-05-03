@@ -1,4 +1,4 @@
-#https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/CascadiaCode.zip?WT.mc_id=-blog-scottha
+# run script as admin
 
 Install-Module posh-git
 Install-Module Terminal-Icons
@@ -21,12 +21,17 @@ winget install Git.Git
 winget install JanDeDobbeleer.OhMyPosh
 winget install Microsoft.VisualStudioCode
 winget install pwsh
+winget install --id=Hashicorp.Terraform  -e
+winget install --id=Kubernetes.kubectl  -e
 winget install Docker.DockerDesktop
 
 # git configs
 git config --global core.editor "code --wait"
 git config --global user.name "Gabriel Gaudreau"
 git config --global user.email "gabriel.gaudreau23@hotmail.com"
+
+# chocolatey
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 # nuget
 if(-not (Test-Path 'C:\Tools')){ New-Item 'C:\Tools' -ItemType Directory;[System.Environment]::SetEnvironmentVariable("Path", "$([System.Environment]::GetEnvironmentVariable("Path", "User"));C:\Tools", "User") }
