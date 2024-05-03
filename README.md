@@ -1,4 +1,5 @@
 # dev-machine
+
 Scripts and configs for my dev machines
 
 - Powershell init
@@ -7,9 +8,10 @@ Scripts and configs for my dev machines
 - Install winget
 - Profile.ps1
 
-# exeuction order
+## exeuction order
+
 - `Install-WinGet.ps1`
 - `Init-Machine.ps1`
 - `Font-Fix.ps1`
 - `SSH-Setup.ps1`
-- `Step-Profile.ps1`
+- `Set-Profile.ps1`
