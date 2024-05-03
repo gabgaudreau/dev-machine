@@ -336,7 +336,7 @@ function gitp(
 {
   git add . :/
   git commit -m $message
-  $output = & git push 2>&1
+  git push
 
   Write-Host $output
 
