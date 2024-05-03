@@ -336,18 +336,7 @@ function gitp(
 {
   git add . :/
   git commit -m $message
-  $output = & { git push } 2>&1
-
-  Write-Host $output
-
-  $m = $output -imatch "git push --set-upstream";
-
-  if ($m.Count -gt 0)
-  {
-    $match = $m[0].Exception.Message.split("`r`n") -imatch "git push --set-upstream"
-
-    Invoke-Expression $match[0]
-  }
+  git push
 
   if ($OpenPr.ToBool())
   {
